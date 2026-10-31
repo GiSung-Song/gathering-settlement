@@ -1,0 +1,19 @@
+# 로컬 개발용 MySQL. 비밀번호는 로컬 전용 값이다.
+# 폴더 이름이 한글이라 프로젝트 이름을 직접 지정한다.
+name: gathering-settlement
+
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: gathering
+      MYSQL_USER: gathering
+      MYSQL_PASSWORD: gathering
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
